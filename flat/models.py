@@ -1,8 +1,6 @@
 from django.db import models
 
-from django.contrib.auth.models import User
-
-# Create your models here.
+from django.conf import settings
 
 
 class Address(models.Model):
@@ -29,4 +27,6 @@ class Item(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, null=True)
+    phone = models.CharField(max_length=20, blank=True)
