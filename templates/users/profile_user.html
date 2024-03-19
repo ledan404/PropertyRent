@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+    Profile {{ user.first_name }} | {{ user.username }}
+{% endblock title %}
+{% block content %}
+    <div class="container mx-auto card bg-primary text-center text-primary-content">
+        <div class="card-body">
+            <p class="card-title text-center mx-auto">{{ user.first_name }} | {{ user.username }}</p>
+        </div>
+    </div>
+    <div class="lg:flex container mx-auto py-3 lg:gap-3">
+        <div class="container mx-auto card bg-secondary text-center text-primary-content mb-3 lg:mb-0">
+            <div class="card-body">
+                <p class="card-title text-center mx-auto">Email: {{ user.email }}</p>
+            </div>
+        </div>
+        <div class="container mx-auto card bg-accent text-center text-primary-content">
+            <div class="card-body">
+                <p class="card-title text-center mx-auto">Phone: {{ profile.phone }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
